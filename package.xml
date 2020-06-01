@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package>
+  <name>src2_move_base</name>
+  <version>0.4.1</version>
+  <description>Mountaineer Team </description>
+
+  <author email="ca0055@mix.wvu.edu">Chris Tatsch</author>
+  <author email="bm00002@mix.wvu.edu">Bernardo Rocamora</author>
+
+  <maintainer email="irlwvu@gmail.com">WVU Interactive Robotics Laboratory</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roslaunch</build_depend>
+  <run_depend>amcl</run_depend>
+  <!-- Disabling till package is released -->
+  <!-- <run_depend>frontier_exploration</run_depend> -->
+  <run_depend>gmapping</run_depend>
+  <run_depend>map_server</run_depend>
+  <run_depend>move_base</run_depend>
+  <run_depend>navfn</run_depend>
+  <run_depend>base_local_planner</run_depend>
+  <run_depend>dwa_local_planner</run_depend>
+
+  <export>
+  </export>
+</package>
