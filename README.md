@@ -16,3 +16,7 @@ roslaunch src2_move_base move_base.launch
 rviz # load the rviz from the src2_move_base rviz folder
 rqt # to run dynamic reconfigure to tune move_base
 
+ROS_NAMESPACE=scout_1/camera rosrun stereo_image_proc stereo_image_proc # get point cloud
+
+
+
