@@ -22,23 +22,24 @@ class WorldTruePosition():
 
     def publish(self):
         while not rospy.is_shutdown():
-            self.msg = rospy.wait_for_message("/odometry/truth", Odometry)
+            self.msg = rospy.wait_for_message("/scout_1/localization/odometry/sensor_fusion", Odometry)
 	    self.msg.twist.twist.linear.x = np.sqrt(np.square(self.msg.twist.twist.linear.x)+np.square(self.msg.twist.twist.linear.y))
-	    #self.msg.twist.twist.linear.y = abs()
-	    #self.msg.twist.twist.linear.z = 0.0
-	    #self.msg.twist.twist.angular.x = 0.0
-	    #self.msg.twist.twist.angular.y = 0.0
+	    self.msg.twist.twist.linear.y = np.sqrt(np.square(self.msg.twist.twist.linear.y))
+	    self.msg.twist.twist.linear.z = 0.0
+	    self.msg.twist.twist.angular.x = 0.0
+	    self.msg.twist.twist.angular.y = 0.0
+            self.msg.header.frame_id = "scout_1_tf/odom"
 	    self.pub.publish(self.msg)
-            self.msg.header.frame_id = "odom"
-	    print(self.msg)
-	    self.br.sendTransform((self.msg.pose.pose.position.x,self.msg.pose.pose.position.y,self.msg.pose.pose.position.z),
-					(self.msg.pose.pose.orientation.x,self.msg.pose.pose.orientation.y,
-					self.msg.pose.pose.orientation.z,self.msg.pose.pose.orientation.w),
-					rospy.Time.now(),"scout_1_tf/base_footprint","odom")
-	    self.br.sendTransform((0.0,0.0,0.0),
-					(0.0,0.0,
-					0.0,1.0),
-					rospy.Time.now(),"odom","world")
+
+	    # print(self.msg)
+#	    self.br.sendTransform((self.msg.pose.pose.position.x,self.msg.pose.pose.position.y,self.msg.pose.pose.position.z),
+	#				(self.msg.pose.pose.orientation.x,self.msg.pose.pose.orientation.y,
+	#				self.msg.pose.pose.orientation.z,self.msg.pose.pose.orientation.w),
+	#				rospy.Time.now(),"scout_1_tf/base_footprint","odom")
+	   # self.br.sendTransform((0.0,0.0,0.0),
+					# (0.0,0.0,
+					# 0.0,1.0),
+	#				rospy.Time.now(),"odom","world")
 
 
     def shutdown(self):
