@@ -25,10 +25,11 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCL
 -->
 <launch>
 
-  <!-- <include file="$(find driving_control)/launch/scout_driving_control.launch"/> -->
-  <!-- <include file="$(find gazebo_truth_odom)/launch/scout_gazebo_truth_odom.launch"/> -->
   <node pkg="pcl_obstacle_detection" type="detector_node" respawn="false" name="detector_node" output="screen"/>
-  <node pkg="src2_move_base" type="world_frame_publisher.py" respawn="false" name="world_frame_publisher" output="screen"/>
+
+  <!-- DEPRECATED -->
+  <!-- <node pkg="src2_move_base" type="world_frame_publisher.py" respawn="false" name="world_frame_publisher" output="screen"/> -->
+
 
   <group ns="scout_1/camera">
     <node pkg="stereo_image_proc" type="stereo_image_proc" respawn="false" name="stereo_image_proc" output="screen"/>
@@ -45,7 +46,7 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCL
 
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
     <remap from="cmd_vel" to="scout_1/driving/cmd_vel"/>
-    <!-- <remap from="odom" to="scout_1/localization/odometry/sensor_fusion"/> -->
+    <remap from="odom" to="scout_1/dead_reckoning/odometry"/>
     <param name="base_global_planner" value="$(arg base_global_planner)"/>
     <param name="base_local_planner" value="$(arg base_local_planner)"/>
     <rosparam param="recovery_behaviors"> [{name: conservative_reset, type: clear_costmap_recovery/ClearCostmapRecovery}, {name: rotate_recovery, type: rotate_recovery/RotateRecovery_SRC}, {name: aggressive_reset, type: clear_costmap_recovery/ClearCostmapRecovery}] </rosparam>

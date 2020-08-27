@@ -22,12 +22,12 @@ class WorldTruePosition():
 
     def publish(self):
         while not rospy.is_shutdown():
-            self.msg = rospy.wait_for_message("/scout_1/localization/odometry/sensor_fusion", Odometry)
-	    self.msg.twist.twist.linear.x = np.sqrt(np.square(self.msg.twist.twist.linear.x)+np.square(self.msg.twist.twist.linear.y))
-	    self.msg.twist.twist.linear.y = np.sqrt(np.square(self.msg.twist.twist.linear.y))
-	    self.msg.twist.twist.linear.z = 0.0
-	    self.msg.twist.twist.angular.x = 0.0
-	    self.msg.twist.twist.angular.y = 0.0
+            self.msg = rospy.wait_for_message("/scout_1/dead_reckoning/odometry", Odometry)
+	    # self.msg.twist.twist.linear.x = np.sqrt(np.square(self.msg.twist.twist.linear.x)+np.square(self.msg.twist.twist.linear.y))
+	    # self.msg.twist.twist.linear.y = np.sqrt(np.square(self.msg.twist.twist.linear.y))
+	    # self.msg.twist.twist.linear.z = 0.0
+	    # self.msg.twist.twist.angular.x = 0.0
+	    # self.msg.twist.twist.angular.y = 0.0
             self.msg.header.frame_id = "scout_1_tf/odom"
 	    self.pub.publish(self.msg)
 
