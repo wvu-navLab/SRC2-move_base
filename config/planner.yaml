@@ -22,16 +22,16 @@ DWAPlannerROS_SRC:
   acc_lim_th: 3.2
 
   max_vel_x: 1.4
-  min_vel_x: -0.1
+  min_vel_x: 0
 
   max_vel_y: 0.0001
   min_vel_y: -0.0001
 
-  max_vel_trans: 1.5
-  min_vel_trans: 0.2001
+  max_vel_trans: 1.4
+  min_vel_trans: 0.1
 
   max_vel_theta: 1.0
-  min_vel_theta: 0.1
+  min_vel_theta: .5
 
   # Goal Tolerance Parameters
   yaw_goal_tolerance: 0.3
