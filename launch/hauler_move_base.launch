@@ -25,7 +25,6 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCL
 -->
 <launch>
 
-
   <!-- DEPRECATED -->
   <!-- <node pkg="src2_move_base" type="world_frame_publisher.py" respawn="false" name="world_frame_publisher" output="screen"/> -->
 
@@ -43,8 +42,8 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCL
 
 
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-    <remap from="cmd_vel" to="scout_1/driving/cmd_vel"/>
-    <remap from="odom" to="scout_1/localization/odometry/sensor_fusion"/>
+    <remap from="cmd_vel" to="hauler_1/driving/cmd_vel"/>
+    <remap from="odom" to="hauler_1/localization/odometry/sensor_fusion"/>
     <param name="base_global_planner" value="$(arg base_global_planner)"/>
     <param name="base_local_planner" value="$(arg base_local_planner)"/>
     <rosparam param="recovery_behaviors"> [{name: conservative_reset, type: clear_costmap_recovery/ClearCostmapRecovery}, {name: rotate_recovery, type: rotate_recovery/RotateRecovery_SRC}, {name: aggressive_reset, type: clear_costmap_recovery/ClearCostmapRecovery}] </rosparam>
