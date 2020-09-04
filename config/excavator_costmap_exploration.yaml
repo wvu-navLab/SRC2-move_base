@@ -1,5 +1,5 @@
 track_unknown_space: true
-global_frame: scout_1_tf/odom
+global_frame: excavator_1_tf/odom
 rolling_window: false
 
 plugins:

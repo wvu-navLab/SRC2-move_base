@@ -1,4 +1,4 @@
-global_frame: scout_1_tf/odom
+global_frame: hauler_1_tf/odom
 rolling_window: false
 track_unknown_space: true
 
