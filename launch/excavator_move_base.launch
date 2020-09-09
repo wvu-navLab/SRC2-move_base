@@ -27,17 +27,6 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCL
 
   <group ns = "excavator_1">
 
-    <arg name="map_file" default="$(find src2_move_base)/maps/playpen_map.yaml"/>
-    <!-- Run the map server -->
-    <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" output="screen"/>
-
-    <!-- DEPRECATED -->
-    <!-- <node pkg="src2_move_base" type="world_frame_publisher.py" respawn="false" name="world_frame_publisher" output="screen"/> -->
-
-    <!-- <group ns="scout_1/camera">
-      <node pkg="stereo_image_proc" type="stereo_image_proc" respawn="false" name="stereo_image_proc" output="screen"/>
-    </group> -->
-
     <arg name="no_static_map" default="false"/>
 
     <!-- <arg name="base_global_planner" default="navfn/NavfnROS"/> -->
