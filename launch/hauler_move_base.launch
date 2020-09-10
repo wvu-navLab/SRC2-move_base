@@ -43,7 +43,7 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCL
       <param name="base_local_planner" value="$(arg base_local_planner)"/>
       <rosparam param="recovery_behaviors"> [{name: conservative_reset, type: clear_costmap_recovery/ClearCostmapRecovery}, {name: rotate_recovery, type: rotate_recovery/RotateRecovery_SRC}, {name: aggressive_reset, type: clear_costmap_recovery/ClearCostmapRecovery}] </rosparam>
 
-      <rosparam file="$(find src2_move_base)/config/planner.yaml" command="load"/>
+      <rosparam file="$(find src2_move_base)/config/hauler_planner.yaml" command="load"/>
 
       <!-- observation sources located in costmap_common.yaml -->
       <rosparam file="$(find src2_move_base)/config/hauler_costmap_common.yaml" command="load" ns="global_costmap" />
@@ -64,8 +64,9 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCL
 
 
       <remap from="/map" to="map"/>
+      <remap from="/map_updates" to="map_updates"/>
       <remap from="/disparity" to="disparity"/>
-      
+
     </node>
 
   </group>

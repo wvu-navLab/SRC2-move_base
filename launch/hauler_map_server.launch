@@ -5,7 +5,8 @@
         <!-- Run the map server -->
         <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" output="screen">
             <remap from="/map" to="map"/>
-            <remap from="/disparity" to="disparity"/>       
+            <remap from="/map_updates" to="map_updates"/>
+            <remap from="/disparity" to="disparity"/>
         </node>
     </group>
 </launch>
