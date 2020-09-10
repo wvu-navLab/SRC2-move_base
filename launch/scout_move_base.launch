@@ -25,7 +25,13 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCL
 -->
 <launch>
 
-  <group ns = "excavator_1">
+  <group ns="scout_1">
+    <!-- DEPRECATED -->
+    <!-- <node pkg="src2_move_base" type="world_frame_publisher.py" respawn="false" name="world_frame_publisher" output="screen"/> -->
+
+    <!-- <group ns="scout_1/camera">
+      <node pkg="stereo_image_proc" type="stereo_image_proc" respawn="false" name="stereo_image_proc" output="screen"/>
+    </group> -->
 
     <arg name="no_static_map" default="false"/>
 
@@ -37,35 +43,35 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCL
 
 
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-      <remap from="cmd_vel" to="driving/cmd_vel"/>
-      <remap from="odom" to="localization/odometry/sensor_fusion"/>
+      <remap from="cmd_vel" to="scout_1/driving/cmd_vel"/>
+      <remap from="odom" to="scout_1/localization/odometry/sensor_fusion"/>
       <param name="base_global_planner" value="$(arg base_global_planner)"/>
       <param name="base_local_planner" value="$(arg base_local_planner)"/>
       <rosparam param="recovery_behaviors"> [{name: conservative_reset, type: clear_costmap_recovery/ClearCostmapRecovery}, {name: rotate_recovery, type: rotate_recovery/RotateRecovery_SRC}, {name: aggressive_reset, type: clear_costmap_recovery/ClearCostmapRecovery}] </rosparam>
 
-      <rosparam file="$(find src2_move_base)/config/excavator_planner.yaml" command="load"/>
+      <rosparam file="$(find src2_move_base)/config/scout_planner.yaml" command="load"/>
 
       <!-- observation sources located in costmap_common.yaml -->
-      <rosparam file="$(find src2_move_base)/config/excavator_costmap_common.yaml" command="load" ns="global_costmap" />
-      <rosparam file="$(find src2_move_base)/config/excavator_costmap_common.yaml" command="load" ns="local_costmap" />
+      <rosparam file="$(find src2_move_base)/config/scout_costmap_common.yaml" command="load" ns="global_costmap" />
+      <rosparam file="$(find src2_move_base)/config/scout_costmap_common.yaml" command="load" ns="local_costmap" />
 
       <!-- local costmap, needs size -->
-      <rosparam file="$(find src2_move_base)/config/excavator_costmap_local.yaml" command="load" ns="local_costmap" />
+      <rosparam file="$(find src2_move_base)/config/scout_costmap_local.yaml" command="load" ns="local_costmap" />
       <param name="local_costmap/width" value="25.0"/>
       <param name="local_costmap/height" value="25.0"/>
 
       <!-- static global costmap, static map provides size -->
-      <rosparam file="$(find src2_move_base)/config/excavator_costmap_global_static.yaml" command="load" ns="global_costmap" unless="$(arg no_static_map)"/>
+      <rosparam file="$(find src2_move_base)/config/scout_costmap_global_static.yaml" command="load" ns="global_costmap" unless="$(arg no_static_map)"/>
 
       <!-- global costmap with laser, for odom_navigation_demo -->
-      <rosparam file="$(find src2_move_base)/config/excavator_costmap_global_laser.yaml" command="load" ns="global_costmap" if="$(arg no_static_map)"/>
+      <rosparam file="$(find src2_move_base)/config/scout_costmap_global_laser.yaml" command="load" ns="global_costmap" if="$(arg no_static_map)"/>
       <param name="global_costmap/width" value="400.0" if="$(arg no_static_map)"/>
       <param name="global_costmap/height" value="400.0" if="$(arg no_static_map)"/>
-      
+
       <remap from="/map" to="map"/>
-      <remap from="/disparity" to="disparity"/>
+      <remap from="/map_updates" to="map_updates"/>
+      <remap from="/disparity" to="disparity"/> 
+
     </node>
-
   </group>
-
 </launch>
