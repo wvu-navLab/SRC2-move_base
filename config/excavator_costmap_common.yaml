@@ -1,14 +1,14 @@
-footprint: [[-1.0,-1.0],[-1.0,1.0],[1.0,1.0],[1.0,-1.0]]
+footprint: [[-1.5,-1.5],[-1.5,1.5],[1.5,1.5],[1.5,-1.5]] #[[-1.0,-1.0],[-1.0,1.0],[1.0,1.0],[1.0,-1.0]]
 footprint_padding: 0.01
 
 robot_base_frame: excavator_1_tf/base_footprint
 update_frequency: 4.0
-publish_frequency: 3.0
+publish_frequency: 4.0
 transform_tolerance: 0.5
 
-resolution: 0.05
+resolution: 0.05 #0.2
 
-obstacle_range: 10.5
+obstacle_range: 15 #10.5
 raytrace_range: 12.0
 
 #layer definitions
@@ -19,16 +19,17 @@ static:
 obstacles_laser:
     observation_sources: laser
     laser: {data_type: PointCloud2, clearing: true, marking: true, topic: /excavator_1/inference/point_cloud_filtered
-, max_obstacle_height: 12.5, min_obstacle_height: 0.01, obstacle_range: 15.0, raytrace_range: 12.0}
-
+, max_obstacle_height: 1.5, min_obstacle_height: 0.01, obstacle_range: 15.0, raytrace_range: 12.0}
+#     laser: {data_type: PointCloud2, clearing: true, marking: true, topic: /excavator_1/inference/point_cloud_filtered
+# , max_obstacle_height: 12.5, min_obstacle_height: 0.01, obstacle_range: 15.0, raytrace_range: 12.0}
 # obstacles_scan:
 #     observation_sources: scan
-#     scan: {sensor_frame: scout_1_tf/hokuyo_link, data_type: LaserScan, topic: /scout_1/laser/scan, marking: true, clearing: true}
+#     scan: {sensor_frame: excavator_1_tf/hokuyo_link, data_type: LaserScan, topic: /excavator_1/laser/scan, marking: true, clearing: true}
 
 inflation:
-    inflation_radius: 4.0
-    cost_scaling_factor: 1.08
+    inflation_radius: 1.75 #2.0
+    cost_scaling_factor: 1.25 #1.08
 
 inflation1:
-    inflation_radius: 4.0
+    inflation_radius: 2.0
     cost_scaling_factor: 1.0
