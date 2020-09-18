@@ -27,7 +27,7 @@ obstacles_laser:
 #     scan: {sensor_frame: scout_1_tf/hokuyo_link, data_type: LaserScan, topic: /scout_1/laser/scan, marking: true, clearing: true}
 
 inflation:
-    inflation_radius: 1.75 #2.0
+    inflation_radius: 2.0 #2.0
     cost_scaling_factor: 1.25 #1.08
 
 inflation1:
