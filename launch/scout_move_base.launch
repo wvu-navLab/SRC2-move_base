@@ -25,7 +25,7 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCL
 -->
 <launch>
 
-  <group ns="scout_1">
+  <group ns="small_scout_1">
     <!-- DEPRECATED -->
     <!-- <node pkg="src2_move_base" type="world_frame_publisher.py" respawn="false" name="world_frame_publisher" output="screen"/> -->
 
@@ -70,7 +70,7 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCL
 
       <remap from="/map" to="map"/>
       <remap from="/map_updates" to="map_updates"/>
-      <remap from="/disparity" to="disparity"/> 
+      <remap from="/disparity" to="disparity"/>
 
     </node>
   </group>
