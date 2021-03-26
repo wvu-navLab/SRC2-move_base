@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import rospy
 import numpy as np
@@ -16,7 +16,7 @@ class WorldTruePosition():
         rospy.loginfo("world_true_position publisher node is on")
         rospy.loginfo("and modified True odometry")
       #  self.r = rospy.Rate(20)
-	self.pub = rospy.Publisher('/odom', Odometry, queue_size = 1)
+        self.pub = rospy.Publisher('/odom', Odometry, queue_size = 1)
         rospy.on_shutdown(self.shutdown)
         self.publish()
 
@@ -29,7 +29,7 @@ class WorldTruePosition():
 	    # self.msg.twist.twist.angular.x = 0.0
 	    # self.msg.twist.twist.angular.y = 0.0
             self.msg.header.frame_id = "scout_1_tf/odom"
-	    self.pub.publish(self.msg)
+            self.pub.publish(self.msg)
 
 	    # print(self.msg)
 #	    self.br.sendTransform((self.msg.pose.pose.position.x,self.msg.pose.pose.position.y,self.msg.pose.pose.position.z),
