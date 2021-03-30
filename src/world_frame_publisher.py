@@ -28,7 +28,7 @@ class WorldTruePosition():
 	    # self.msg.twist.twist.linear.z = 0.0
 	    # self.msg.twist.twist.angular.x = 0.0
 	    # self.msg.twist.twist.angular.y = 0.0
-            self.msg.header.frame_id = "scout_1_tf/odom"
+            self.msg.header.frame_id = "scout_1_tf_odom"
             self.pub.publish(self.msg)
 
 	    # print(self.msg)
