@@ -1,4 +1,4 @@
-global_frame: excavator_1_tf/odom
+global_frame: small_excavator_1_odom
 rolling_window: true
 
 plugins:

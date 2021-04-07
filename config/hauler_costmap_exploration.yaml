@@ -1,5 +1,5 @@
 track_unknown_space: true
-global_frame: hauler_1_tf/odom
+global_frame: small_hauler_1_odom
 rolling_window: false
 
 plugins:
