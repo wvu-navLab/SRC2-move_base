@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+    <group ns="small_scout_2">
+        <arg name="map_file" default="$(find src2_move_base)/maps/playpen_map.yaml"/>
+
+        <!-- Run the map server -->
+        <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" output="screen">
+            <remap from="/map" to="map"/>
+            <remap from="/map_updates" to="map_updates"/>
+            <remap from="/disparity" to="disparity"/>
+        </node>
+    </group>
+</launch>
