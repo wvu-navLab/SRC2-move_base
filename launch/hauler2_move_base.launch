@@ -41,22 +41,22 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCL
       <param name="base_local_planner" value="$(arg base_local_planner)"/>
       <rosparam param="recovery_behaviors"> [{name: conservative_reset, type: clear_costmap_recovery/ClearCostmapRecovery}, {name: rotate_recovery, type: rotate_recovery/RotateRecovery_SRC}, {name: aggressive_reset, type: clear_costmap_recovery/ClearCostmapRecovery}] </rosparam>
 
-      <rosparam file="$(find src2_move_base)/config/hauler_planner.yaml" command="load"/>
+      <rosparam file="$(find src2_move_base)/config/hauler2_planner.yaml" command="load"/>
 
       <!-- observation sources located in costmap_common.yaml -->
-      <rosparam file="$(find src2_move_base)/config/hauler_costmap_common.yaml" command="load" ns="global_costmap" />
-      <rosparam file="$(find src2_move_base)/config/hauler_costmap_common.yaml" command="load" ns="local_costmap" />
+      <rosparam file="$(find src2_move_base)/config/hauler2_costmap_common.yaml" command="load" ns="global_costmap" />
+      <rosparam file="$(find src2_move_base)/config/hauler2_costmap_common.yaml" command="load" ns="local_costmap" />
 
       <!-- local costmap, needs size -->
-      <rosparam file="$(find src2_move_base)/config/hauler_costmap_local.yaml" command="load" ns="local_costmap" />
+      <rosparam file="$(find src2_move_base)/config/hauler2_costmap_local.yaml" command="load" ns="local_costmap" />
       <param name="local_costmap/width" value="25.0"/>
       <param name="local_costmap/height" value="25.0"/>
 
       <!-- static global costmap, static map provides size -->
-      <rosparam file="$(find src2_move_base)/config/hauler_costmap_global_static.yaml" command="load" ns="global_costmap" unless="$(arg no_static_map)"/>
+      <rosparam file="$(find src2_move_base)/config/hauler2_costmap_global_static.yaml" command="load" ns="global_costmap" unless="$(arg no_static_map)"/>
 
       <!-- global costmap with laser, for odom_navigation_demo -->
-      <rosparam file="$(find src2_move_base)/config/hauler_costmap_global_laser.yaml" command="load" ns="global_costmap" if="$(arg no_static_map)"/>
+      <rosparam file="$(find src2_move_base)/config/hauler2_costmap_global_laser.yaml" command="load" ns="global_costmap" if="$(arg no_static_map)"/>
       <param name="global_costmap/width" value="400.0" if="$(arg no_static_map)"/>
       <param name="global_costmap/height" value="400.0" if="$(arg no_static_map)"/>
 
