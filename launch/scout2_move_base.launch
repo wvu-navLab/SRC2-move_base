@@ -25,7 +25,6 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCL
 -->
 <launch>
 
-  <group ns="small_scout_2">
     <!-- DEPRECATED -->
     <!-- <node pkg="src2_move_base" type="world_frame_publisher.py" respawn="false" name="world_frame_publisher" output="screen"/> -->
 
@@ -73,5 +72,4 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCL
       <remap from="/disparity" to="disparity"/>
 
     </node>
-  </group>
 </launch>

@@ -25,8 +25,6 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCL
 -->
 <launch>
 
-  <group ns = "small_hauler_1">
-
     <arg name="no_static_map" default="false"/>
 
     <!-- <arg name="base_global_planner" default="navfn/NavfnROS"/> -->
@@ -68,8 +66,5 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCL
       <remap from="/disparity" to="disparity"/>
 
     </node>
-
-  </group>
-
 
 </launch>

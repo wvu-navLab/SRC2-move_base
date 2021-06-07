@@ -1,0 +1,9 @@
+global_frame: small_hauler_2_odom
+rolling_window: false
+track_unknown_space: true
+
+origin_x: -20.0 # -130.0 #-> old map
+origin_y: -200.0 #-130.0 #-> the old map
+plugins:
+  - {name: obstacles_laser,           type: "costmap_2d::ObstacleLayer"}
+  - {name: inflation,                 type: "costmap_2d::InflationLayer"}
