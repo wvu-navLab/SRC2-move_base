@@ -425,22 +425,6 @@ Visualization Manager:
       Use Timestamp: false
       Value: true
     - Alpha: 1
-      Axes Length: 1
-      Axes Radius: 0.10000000149011612
-      Class: rviz/Pose
-      Color: 255; 25; 0
-      Enabled: true
-      Head Length: 0.30000001192092896
-      Head Radius: 0.10000000149011612
-      Name: Pose
-      Queue Size: 10
-      Shaft Length: 1
-      Shaft Radius: 0.05000000074505806
-      Shape: Arrow
-      Topic: /move_base/current_goal
-      Unreliable: false
-      Value: true
-    - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
         Max Value: 10
@@ -738,6 +722,70 @@ Visualization Manager:
       Topic: /small_excavator_1/move_base/global_costmap/footprint
       Unreliable: false
       Value: true
+    - Alpha: 1
+      Axes Length: 5
+      Axes Radius: 0.5
+      Class: rviz/Pose
+      Color: 255; 25; 0
+      Enabled: true
+      Head Length: 0.5
+      Head Radius: 1
+      Name: Pose
+      Queue Size: 10
+      Shaft Length: 5
+      Shaft Radius: 0.5
+      Shape: Axes
+      Topic: /small_scout_1/move_base/current_goal
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Axes Length: 5
+      Axes Radius: 0.5
+      Class: rviz/Pose
+      Color: 255; 25; 0
+      Enabled: true
+      Head Length: 0.5
+      Head Radius: 1
+      Name: Pose
+      Queue Size: 10
+      Shaft Length: 5
+      Shaft Radius: 0.5
+      Shape: Axes
+      Topic: /small_scout_2/move_base/current_goal
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Axes Length: 5
+      Axes Radius: 0.5
+      Class: rviz/Pose
+      Color: 255; 25; 0
+      Enabled: true
+      Head Length: 0.5
+      Head Radius: 1
+      Name: Pose
+      Queue Size: 10
+      Shaft Length: 5
+      Shaft Radius: 0.5
+      Shape: Axes
+      Topic: /small_excavator_1/move_base/current_goal
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Axes Length: 5
+      Axes Radius: 0.5
+      Class: rviz/Pose
+      Color: 255; 25; 0
+      Enabled: true
+      Head Length: 0.5
+      Head Radius: 1
+      Name: Pose
+      Queue Size: 10
+      Shaft Length: 5
+      Shaft Radius: 0.5
+      Shape: Axes
+      Topic: /small_hauler_1/move_base/current_goal
+      Unreliable: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 238; 238; 236
@@ -766,7 +814,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 74.11125183105469
+      Distance: 203.7235107421875
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -774,17 +822,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: -11.563730239868164
-        Y: -14.931296348571777
-        Z: 3.864264363073744e-05
+        X: 9.886175155639648
+        Y: 15.79944896697998
+        Z: 4.3217016354901716e-05
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.0897966623306274
+      Pitch: 1.179796576499939
       Target Frame: <Fixed Frame>
-      Yaw: 2.297638416290283
+      Yaw: 0.02263827621936798
     Saved: ~
 Window Geometry:
   Displays:
