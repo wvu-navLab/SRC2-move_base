@@ -17,14 +17,14 @@ static:
     subscribe_to_updates: true
 
 obstacles_laser:
-    observation_sources: laser
+    observation_sources: laser scan
     laser: {data_type: PointCloud2, clearing: true, marking: true, topic: /small_scout_2/inference/point_cloud
-, max_obstacle_height: 1.5, min_obstacle_height: 0.01, obstacle_range: 14.0, raytrace_range: 15.0}
+, max_obstacle_height: 1.5, min_obstacle_height: 0.0, obstacle_range: 14.0, raytrace_range: 15.0}
 #     laser: {data_type: PointCloud2, clearing: true, marking: true, topic: /scout_1/inference/point_cloud_filtered
 # , max_obstacle_height: 12.5, min_obstacle_height: 0.01, obstacle_range: 15.0, raytrace_range: 12.0}
 # obstacles_scan:
 #     observation_sources: scan
-#     scan: {sensor_frame: scout_1_tf/hokuyo_link, data_type: LaserScan, topic: /scout_1/laser/scan, marking: true, clearing: true}
+    scan: {sensor_frame: small_scout_2_lidar_link, data_type: LaserScan, topic: /small_scout_2/laser/scan, marking: true, clearing: true}
 
 inflation:
     inflation_radius: 2.0 #2.0
