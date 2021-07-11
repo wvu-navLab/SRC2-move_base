@@ -8,8 +8,8 @@ transform_tolerance: 0.5
 
 resolution: 0.5 #0.2
 
-obstacle_range: 10 #10.5
-raytrace_range: 11.0
+obstacle_range: 7.0 #10.5
+raytrace_range: 8.0
 
 #layer definitions
 static:
@@ -19,7 +19,7 @@ static:
 obstacles_laser:
     observation_sources: laser
     laser: {data_type: PointCloud2, clearing: true, marking: true, topic: /small_excavator_1/inference/point_cloud
-, max_obstacle_height: 15, min_obstacle_height: 0.0, obstacle_range: 10.0, raytrace_range: 11.0}
+, max_obstacle_height: 15, min_obstacle_height: 0.0, obstacle_range: 7.0, raytrace_range: 8.0}
 #     laser: {data_type: PointCloud2, clearing: true, marking: true, topic: /excavator_1/inference/point_cloud_filtered
 # , max_obstacle_height: 12.5, min_obstacle_height: 0.01, obstacle_range: 15.0, raytrace_range: 12.0}
 # obstacles_scan:
@@ -27,9 +27,9 @@ obstacles_laser:
 #     scan: {sensor_frame: excavator_1_tf/hokuyo_link, data_type: LaserScan, topic: /excavator_1/laser/scan, marking: true, clearing: true}
 
 inflation:
-    inflation_radius: 0.5 #2.0
+    inflation_radius: 0.25 #2.0
     cost_scaling_factor: 1.25 #1.08
 
 inflation1:
-    inflation_radius: 0.5
+    inflation_radius: 0.25
     cost_scaling_factor: 1.0
