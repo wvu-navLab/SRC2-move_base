@@ -1,4 +1,4 @@
-footprint: [[-1.5,-1.5],[-1.5,1.5],[1.5,1.5],[1.5,-1.5]] #[[-1.0,-1.0],[-1.0,1.0],[1.0,1.0],[1.0,-1.0]]
+footprint: [[-1.0,-1.0],[-1.0,1.0],[1.0,1.0],[1.0,-1.0]] #[[-1.5,-1.5],[-1.5,1.5],[1.5,1.5],[1.5,-1.5]] #[[-1.0,-1.0],[-1.0,1.0],[1.0,1.0],[1.0,-1.0]]
 footprint_padding: 0.01
 
 robot_base_frame: small_hauler_1_base_footprint
@@ -6,7 +6,7 @@ update_frequency: 4.0
 publish_frequency: 4.0
 transform_tolerance: 0.5
 
-resolution: 0.5 #0.2
+resolution: 0.1 #0.2
 
 obstacle_range: 10.0 #10.5
 raytrace_range: 11.0
