@@ -24,14 +24,6 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCL
 )ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 <launch>
-
-    <!-- DEPRECATED -->
-    <!-- <node pkg="src2_move_base" type="world_frame_publisher.py" respawn="false" name="world_frame_publisher" output="screen"/> -->
-
-    <!-- <group ns="scout_1/camera">
-      <node pkg="stereo_image_proc" type="stereo_image_proc" respawn="false" name="stereo_image_proc" output="screen"/>
-    </group> -->
-
     <arg name="no_static_map" default="false"/>
 
     <!-- <arg name="base_global_planner" default="navfn/NavfnROS"/> -->
