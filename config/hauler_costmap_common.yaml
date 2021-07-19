@@ -19,7 +19,7 @@ static:
 obstacles_laser:
     observation_sources: laser
     laser: {data_type: PointCloud2, clearing: true, marking: true, topic: /small_hauler_1/inference/point_cloud
-, max_obstacle_height: 15, min_obstacle_height: 1.42, obstacle_range: 10.0, raytrace_range: 11.0}
+, max_obstacle_height: 15, min_obstacle_height: 1.30, obstacle_range: 10.0, raytrace_range: 11.0}
 #     laser: {data_type: PointCloud2, clearing: true, marking: true, topic: /hauler_1/inference/point_cloud_filtered
 # , max_obstacle_height: 12.5, min_obstacle_height: 0.01, obstacle_range: 15.0, raytrace_range: 12.0}
 # obstacles_scan:
