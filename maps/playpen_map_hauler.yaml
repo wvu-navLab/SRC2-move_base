@@ -1,4 +1,4 @@
-image: playpen_map_hauler_connected.pgm
+image: playpen_map_unconnected.pgm
 resolution: 0.10000
 origin: [-100.000000, -100.000000, 0.000000]
 negate: 0
